@@ -1,0 +1,186 @@
+.popular-tours {
+  padding: 5rem 0 10rem 0;
+  
+  @media @s840 {
+    padding: 5rem 0 5rem 0;
+  }
+}
+
+.popular-tours__heading {
+  font-size: 8rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  color: @primary_color;
+  text-shadow: 0 0.1rem 0.2rem @primary_color;
+
+  @media @s1040 {
+    font-size: 6rem;
+  }
+
+  @media @s840 {
+    margin-bottom: 5rem;
+    font-size: 5rem;
+  }
+
+  @media @s680 {
+    font-size: 4.5rem;
+  }
+  @media @s620 {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media @s540 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.card__container {
+  display         : flex;
+  justify-content : space-evenly;
+}
+
+.card {
+  width       : 35rem;
+  position    : relative;
+  perspective : 150rem;
+}
+
+.card__img {
+  width         : 100%;
+  border-radius : 0.3rem 0.3rem 0 0;
+}
+
+.card__front {
+  text-align       : center;
+  background-color : @white_color;
+  border-radius    : 0.3rem;
+  position         : relative;
+  z-index          : 10;
+  opacity          : 0.9;
+  transition       : opacity 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.card__heading {
+  font-size      : 2.5rem;
+  font-weight    : 700;
+  text-transform : uppercase;
+  position       : absolute;
+  top            : 30%;
+  right          : 1.5rem;
+  color          : @white_color;
+  text-shadow    : 0 0 1rem #000;
+  
+  @media @s540 {
+    font-size: 2rem;
+  }
+}
+
+.card__list {
+  width   : 80%;
+  margin  : auto;
+  padding : 2rem 0 3rem 0;
+  
+  @media @s540 {
+    width: 75%;
+  }
+}
+
+.card__list-item {
+  font-size      : 1.6rem;
+  font-weight    : 500;
+  color          : @light_grey_color;
+  margin         : 2rem 0;
+  border-bottom  : 0.1rem solid @primary_color;
+  padding-bottom : 1.5rem;
+  
+  @media @s540 {
+    font-size: 1.4rem
+  }
+}
+
+.card__back:extend(.flex-center) {
+  position         : absolute;
+  top              : 0;
+  width            : 100%;
+  height           : 100%;
+  background-color : @primary_color;
+  border-radius    : 0.3rem;
+  box-shadow       : 0 2rem 4rem #777;
+  flex-direction   : column;
+  transform        : translateZ(-5rem) translateX(3rem);
+  opacity          : 0.5;
+  transition       : opacity 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.card__back-heading {
+  font-size     : 5rem;
+  font-weight   : 300;
+  color         : @white_color;
+  margin-bottom : 3rem;
+}
+
+.card__btn {
+  position         : absolute;
+  top              : 0.5rem;
+  left             : 0.5rem;
+  padding          : 0.5rem;
+  background-color : fade(@white_color, 80%);
+  color            : @light_grey_color;
+  border-radius    : 3rem;
+  font-family      : inherit;
+  font-size        : 1.5rem;
+  font-weight      : 600;
+  text-transform   : uppercase;
+  letter-spacing   : 0.2rem;
+}
+
+.card__back-btn {
+  color            : @primary_color;
+  background-color : @white_color;
+  font-size        : 2.5rem;
+  padding          : 1rem 2rem;
+  letter-spacing   : 0.2rem;
+  border-radius    : 5rem;
+  font-family      : inherit;
+}
+
+.switch {
+  & > .card__front {
+    box-shadow : 0 2rem 4rem #777;
+    transform  : translateZ(-5rem) translateX(3rem);
+    opacity    : 0.5;
+    z-index    : 0;
+  }
+
+  & > .card__back {
+    transform  : translateZ(0) translateX(0);
+    box-shadow : 0 0.5rem 2rem #aaa;
+    opacity    : 0.9;
+  }
+}
+
+// Media Quaries
+.card {
+  @media @s1280 {
+    width: 30rem;
+  }
+  @media @s1160 {
+    width: 27rem;
+  }
+  @media @s1040 {
+    width: 35rem;
+    margin: 3rem 0;
+  }
+  @media @s540 {
+    width: 30rem;
+  }
+}
+
+.card__container {
+  @media @s1040 {
+    flex-direction: column;
+    align-items: center;
+  }
+}

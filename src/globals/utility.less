@@ -1,0 +1,33 @@
+@primary_color    : #2b81e4;
+@secondary_color  : #eee;
+@white_color      : #fff;
+@grey_color       : #555;
+@light_grey_color : #777;
+
+@s1280 : ~"only screen and (max-width: 1280px)";
+@s1200 : ~"only screen and (max-width: 1200px)";
+@s1160 : ~"only screen and (max-width: 1160px)";
+@s1040 : ~"only screen and (max-width: 1040px)";
+@s992 : ~"only screen and (max-width: 992px)";
+@s840 : ~"only screen and (max-width: 840px)";
+@s760 : ~"only screen and (max-width: 840px)";
+@s680 : ~"only screen and (max-width: 680px)";
+@s620 : ~"only screen and (max-width: 620px)";
+@s540 : ~"only screen and (max-width: 540px)";
+
+.flex-center {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+}
+
+.container {
+  background-color : @secondary_color;
+  margin           : 3.5rem;
+  box-shadow       : 0 1rem 3rem @grey_color;
+  overflow         : hidden;
+  
+  @media @s680 {
+    margin: 0;
+  }
+}

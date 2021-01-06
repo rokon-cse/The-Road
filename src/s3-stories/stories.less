@@ -1,0 +1,104 @@
+.stories {
+  padding  : 10rem 0;
+  position : relative;
+}
+
+.video-container {
+  position : absolute;
+  top      : 0;
+  left     : 0;
+  width    : 100%;
+  height   : 100%;
+  opacity  : 0.4;
+}
+
+.bg-video {
+  width      : 100%;
+  height     : 100%;
+  object-fit : cover;
+}
+
+.stories__container {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+}
+
+.story__bg {
+  background-color : fade(@secondary_color, 85%);
+  padding          : 5rem;
+  margin           : 5rem;
+  width            : 70%;
+  box-shadow       : 0 2rem 5rem fade(#333333, 40%);
+  transform        : skewX(20deg);
+  
+  @media @s992 {
+    transform: skewX(10deg);
+  }
+  @media @s840 {
+    transform: skewX(0);
+  }
+}
+
+.story {
+  transform: skewX(-20deg);
+  display: flex;
+
+  @media @s992 {
+    transform: skewX(-10deg);
+  }
+  @media @s840 {
+    transform: skewX(0);
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.story__img {
+  width         : 20rem;
+  height        : 20rem;
+  border-radius : 50%;
+  object-fit    : cover;
+  
+  @media @s840 {
+    margin-bottom: 3rem;
+    margin-right  : 0;
+  }
+}
+
+.story__text {
+  letter-spacing: 0.1rem;
+}
+
+.story__heading {
+  font-size      : 2.5rem;
+  text-transform : uppercase;
+  color          : @grey_color;
+  margin-bottom  : 1rem;
+  
+  @media @s992 {
+    text-align: center;
+  }
+  
+  @media @s680 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+}
+
+.story__paragraph {
+  font-size   : 1.8rem;
+  color       : @light_grey_color;
+  text-indent : 1rem;
+  
+//  &::first-letter {
+//    margin-left: 1rem;
+//  }
+}
+
+// Media Quaries
+.story__bg {
+  @media @s1200 {
+    width: 85%;
+  }
+}

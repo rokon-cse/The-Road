@@ -1,0 +1,137 @@
+.menu-icon:extend(.flex-center) {
+  width            : 5.5rem;
+  height           : 5.5rem;
+  background-color : @white_color;
+  border-radius    : 50%;
+  cursor           : pointer;
+  flex-direction   : column;
+}
+
+.menu-icon--open {
+  position : fixed;
+  top      : 6.5rem;
+  left     : 6.5rem;
+  z-index  : 15;
+  
+  @media @s680 {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  & .menu-icon__line {
+    margin: 0.3rem 0;
+  }
+}
+
+.menu-icon__line {
+  height           : 0.2rem;
+  width            : 3.5rem;
+  background-color : @light_grey_color;
+}
+
+.navbar__container {
+  width            : 100vw;
+  height           : 100vh;
+  background-color : fade(@white_color, 70%);
+  position         : fixed;
+  left             : 0;
+  bottom           : -100%;
+  opacity          : 0;
+  z-index          : 20;
+  padding          : 3.5rem 5.5rem 3.5rem 3.5rem;
+  transition       : bottom 0.5s, opacity 0.2s;
+  
+  @media @s680 {
+    padding: 0;
+  }
+}
+
+.navbar {
+  width      : 100%;
+  height     : 100%;
+  background : linear-gradient(fade(#000, 50%), fade(#000, 30%)),
+    url('images/navbar-bg.jpg') center/cover no-repeat;
+  position   : relative;
+  overflow-y : hidden;
+}
+
+.menu-icon--close {
+  position : absolute;
+  top      : 2.5rem;
+  right    : 3rem;
+  z-index  : 5;
+  
+  .menu-icon__line {
+    position: absolute;
+    
+    &--1 {
+      transform: rotate(40deg);
+    }
+    &--2 {
+      transform: rotate(-40deg);
+    }
+  }
+}
+
+.menu {
+  height  : 100%;
+  display : flex;
+}
+
+.menu__link:extend(.flex-center) {
+  width          : 100%;
+  font-size      : 3rem;
+  font-weight    : 700;
+  color          : @white_color;
+  text-transform : uppercase;
+  opacity        : 0.8;
+  transition     : all 0.3s;
+  position       : relative;
+  top            : -100%;
+  
+  &:hover {
+    opacity : 1;
+    color   : @primary_color;
+  }
+}
+
+.active {
+  &.navbar__container {
+    bottom     : 0;
+    opacity    : 1;
+    transition : bottom 0.5s, opacity 0.2s 0.25s;
+  }
+  
+  .menu__link {
+    top: 0;
+    
+    &:nth-of-type(1) {
+      transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
+    }
+    &:nth-of-type(2) {
+      transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
+    }
+    &:nth-of-type(3) {
+      transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
+    }
+    &:nth-of-type(4) {
+      transition: top 1s 1s, opacity 0.3s, color 0.3s;
+    }
+    &:nth-of-type(5) {
+      transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
+    }
+  }
+}
+
+// Media Quaries
+.menu {
+  @media @s992 {
+    flex-direction: column;
+  }
+}
+
+.menu__link {
+  @media @s992 {
+    flex-grow: 1;
+  }
+}
